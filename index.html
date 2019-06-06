@@ -21,21 +21,19 @@
         <img id="logo" class="header-top animated bounceInDown" src="img/DemaLogo.png">
         <div class="card card-signin my-5 bg-light animated fadeIn">
           <h2>Administration Login</h2><br>
-          <form action="dashboard.html" method="post">
-            <div class="form-group">
-              Username <input type="text" class="form-control" placeholder="Enter username" name="username" required autofocus>
-            </div>
-            <div class="form-group">
-              Password <input type="password" class="form-control" placeholder="Enter password" name="passw" required>
-            </div>
-            <div class="form-group form-check">
-              <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" name="remember"> Remember me
-              </label>
-            </div>
-            <button type="submit" name="submit" class="btn btn-outline-primary">Sign In</button><br>
-            <br>
-          </form>
+          <div class="form-group">
+            Username <input type="text" class="form-control" placeholder="Enter username" name="username" required autofocus>
+          </div>
+          <div class="form-group">
+            Password <input type="password" class="form-control" placeholder="Enter password" name="passw" required>
+          </div>
+          <div class="form-group form-check">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" name="remember"> Remember me
+            </label>
+          </div>
+          <button type="submit" name="submit" class="btn btn-outline-primary" onclick="window.location.href='dashboard.html'">Sign In</button><br>
+          <br>
         </div>
       </div>
     </div>
