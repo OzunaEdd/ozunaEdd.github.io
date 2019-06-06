@@ -8,7 +8,7 @@
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/animate.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
   <title>Register</title>
@@ -31,25 +31,6 @@
             <button type="submit" name="submit" class="btn btn-outline-success">Register</button><br>
             <br>
             <p>Already have an account? <a href="index.php">Sign In</a></p>
-            <?php
-            session_start();
-            if(isset($_POST['submit'])) {
-         $dbc = mysqli_connect("localhost", "root", "", "csc350") or die(mysql_error()); //connect to server
-         if ($dbc) {
-           $userName = $_REQUEST['user'];
-           $passWord = $_REQUEST['pswd'];
-           $key = "md5";
-           $encrypt = hash($key,$passWord);
-           $register = "INSERT INTO activity(user,type,time) VALUES('$userName','REGISTER',NOW())";
-           $q = "INSERT INTO customers (id, pw) VALUES('$userName','$encrypt')";
-           if(mysqli_query($dbc,$q) && mysqli_query($dbc,$register)){
-             $_SESSION['username'] = $userName;
-             $_SESSION['valid'] = true;
-             header("Location: dashboard.php");
-             echo '<p>Registration Successful</p>';
-           }
-         }
-       } ?>
           </form>
         </div>
       </div>
